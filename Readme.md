@@ -1,11 +1,47 @@
-# Predict2Optimize-WiDS-2025 Midterm Report
+# Predict2Optimize – WiDS 2025
 
-This repository contains my work for **Predicting Market Dynamics for Data-Driven Portfolio Optimization** (WiDS 2025, Project ID 48), completed up to the midterm. The work focuses on understanding market behaviour through historical data analysis and building simple predictive models for financial time series.
+This repository contains my work for **Predicting Market Dynamics for Data-Driven Portfolio Optimization**, completed as part of **WiDS 2025 (Project ID 48)**.
 
-The repository is organized by weeks, with each folder containing the corresponding notebooks and analysis. Weeks 1 and 2 were covered before the midterm report. Week 1 focuses on exploratory analysis of market data and return distributions, while Week 2 builds on this foundation by introducing feature engineering, predictive modelling, and model evaluation.
+The project follows an end-to-end quantitative finance pipeline, progressing from financial data analysis and return prediction to portfolio optimization and backtesting under realistic constraints.
 
-In Week 1, I worked with long-term historical stock price data downloaded using the `yfinance` library, and analyzed trends and performance of selected stocks over extended periods and studied the behavior of rolling statistics such as moving averages and volatility. Log returns were computed at different time horizons (daily, weekly, and monthly) to observe how return distributions change with aggregation. By analyzing skewness, kurtosis, and visualizing standardized return distributions, and observed the fat-tailed nature of short-term returns and how longer-horizon returns appear smoother and closer to a normal distribution. This analysis also highlighted the role of compounding and the relevance of the Central Limit Theorem in explaining aggregational Gaussianity.
+---
 
-In Week 2, the focus shifted to return prediction and model evaluation. Using daily returns, and constructed features such as current and lagged returns, rolling mean and rolling volatility over a 20-day window, and short-term momentum. Several predictive models were implemented, starting with naive baselines such as a zero predictor and a rolling mean predictor, followed by linear models including Ordinary Least Squares and Ridge regression, and a Random Forest regressor. The models were evaluated using time-series-aware train-test splits to avoid look-ahead bias. Performance was compared using RMSE, rolling RMSE over time, and volatility-scaled prediction errors. A simple sign-based trading strategy was also implemented to illustrate how model predictions could translate into returns.
+## Project Structure
 
-Overall, the work up to the midterm highlights the challenges of predicting financial returns, the importance of strong baselines, and the need for careful evaluation in time-series settings. Further improvements and more advanced portfolio-level strategies will be explored in the later stages of the project.
+The repository is organized by weeks:
+
+- **Week 1:** Exploratory financial data analysis  
+  - Price trends, returns, volatility  
+  - Return distributions and aggregational Gaussianity  
+
+- **Week 2:** Return prediction and evaluation  
+  - Feature engineering using lagged returns and rolling statistics  
+  - Baseline models, linear regression, and Random Forest  
+  - Time-series-aware evaluation to avoid look-ahead bias  
+
+- **Week 4:** Portfolio optimization  
+  - Markowitz mean-variance optimization  
+  - Practical constraints (long-only, leverage, position limits)  
+  - Robust optimization under return uncertainty  
+
+- **Week 5:** Predict-to-optimize backtesting  
+  - Rolling prediction → optimization → rebalance framework  
+  - Transaction costs and rebalancing effects  
+  - Comparison of equal-weight, Markowitz, and robust portfolios  
+
+---
+
+## Key Concepts
+
+- Financial return analysis and stylized facts  
+- Time-series prediction and walk-forward validation  
+- Convex optimization using CVXPY  
+- Robust portfolio optimization  
+- Risk-adjusted performance evaluation  
+
+---
+
+## Notes
+
+- All models and backtests use strictly past data (no look-ahead bias).
+- Results are intended for educational purposes only.
